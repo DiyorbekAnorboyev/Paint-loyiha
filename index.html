@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sammi | Paint</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=l1E-6sXCkhf6tLwVwFABJ3brjc2lhRxYExUgJV4CrTcY_7BPLO64POJthLJyO3vnzlQxNszWYqmD_Aocs2Fn4Alv3o8-qZDmya5YHqnW3-aHQOuZQ0YGMZH2bGXIhRpbLzmUihwruIoHjiT-iPGErB0lheCyM3MyoLAc8fNlNKHck1atuV2ZkHRSh870qoVoCI4w7nWWIKZVLrpCwtWGGLAlbxDBOL2KISoWhimHtb0U8cS-x_2HEanIClC14VeyNzm9gh5mu-j-0zklEMhJJlvHZ25ppo4OrmgzsW4Zo96IoXhp07syNvs3p8536qV5NVSgZMuBw_4wkASwDC-l1worJB-veO2KFTbtLKPkynV4DihwbDso9BWJWLnPUqOxyLc5NzyntZxM5NhuOfEE7-9nUF2WptWeH5ph9n9THwXP_dujh021AJQNlno2oPtbkurWiLx2EButzr_7Svr8gLCoDBjSy3rnUaO9f4JEaNpOzEDFpoHbGSXEDhy2xiqsIZdVF3cAG9FQZF6OBvl2muV-cn6sVWK7Uxr7rpQJnPtvsEoIquevxXAZpU3y_xczgaYcO-7FyAC3JGQPJqUkzXOreNdAfBeKSDDPYyeQGTqsZA_9f9G25CIH2d45BvtDnR592TZWTQs1K3LB9LJ1FMf8JWwOiqDOPgn3yPJPkoDW_qW5StEJ9gOfTbnoUBh75bLXB7K6LZsgPlFCJBW2etLuhPLYExJo_kypARcMNrI8S3l2yM5wjMYQ7KBiDW412AX9L3HyAVLbBjI7eeNV3qV8wDnNoR94VUPSpKCiGae2teWfI6IJ5InqRDf1SKM3KxQNS_3QIPPsgGBH2Qmz7ZWUvhXhV1DmbC63rzkQiSk8rC7x9rApblI6_bemxq-gYVzoiwsfdZh0x7sCFQ7oMmvVmCqYYxoeQS_iOclLAXqWNz6r2FujyVFWjPmukZQdpvJAL--eTrwPcM8hr8DJEN67BFML8Jdx3XCcKGoNI1vwWfwvNluH-_VA3WPNO4HcTDe6g3sdPOaxgnOUgGXKitJRmZvCcVrlvlHdOauasJZVyyAZdIqGOBv2faTPHybm8h9EmO_Qy7MfiHNOUM1mgcGqyPyt8SG_4-t5yTaPcg6TLd0RAspL03tLjn-wtrwzfKaFfbrCxFpOiYSeCgGK_NNX6k3ntrOJmtzZGx_Gn3RmwoJ0caMk12IpMLsHsYbNzWDz2PlMktroDiRVTaaajUp4ODpwZI4X55P3W5D1E-OjssJf5-IesSHVo0Tn9b0zEnINAm2IH0MXYaHXXBQ7WJeKThaZk0Ye4_1vewoowXQui2g4MHGqTH4-3Z06HN8wsJ7d0JjLum71O8vJZMudFE9jtzxVVyqgbDghuql-HSoowCO0Dj9DmGM7EKtbFJDpHSxtc3T38vOtQ-ZjbYtE2xIFCeZ2bv5YPJD6AL49Npjm4ZazvJCxSlaKHJ-lXfNty75crZkuMychXy2_vahv9z34yKkMo28e2wYtJSl91JG0yde-pqON_fYkAzv7AnhxkFgpqdMWukYbnUrf-xkZRduzg-qXjGWp3gSHfnwI11i-Dtc8xcJGzf_Lto-ieNWhWRo4jfExfGV-tpUYPtfkbIUBdGp8aSfaVUF2CpTTvnJl_WMxKLAsbT46yCHY9OQhjh3Dpc6HEAsaG7KcU6cuQuv9RRLHIQvRyAgz8rbmc9MBNhC4N8cuQcHaAiQN0PfF" charset="UTF-8"></script><script src="js/script.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<section class="drawing-board">
+				<canvas></canvas>
+			</section>
+			<section class="tools-board">
+				<div class="row">
+					<label class="title">SHAKLLAR</label>
+					<ul class="options">
+						<li class="option tool" id="rectangle">
+							<img src="icons/rectangle.svg" alt="rectangle" />
+							<span>To'rtburchak</span>
+						</li>
+						<li class="option tool" id="circle">
+							<img src="icons/circle.svg" alt="circle" />
+							<span>Doira</span>
+						</li>
+						<li class="option tool" id="triangle">
+							<img src="icons/triangle.svg" alt="triangle" />
+							<span>Uchburchak</span>
+						</li>
+						<li class="option">
+							<input type="checkbox" id="fill-color" />
+							<label for="fill-color">Rangni to'ldirish</label>
+						</li>
+					</ul>
+				</div>
+				<div class="row">
+					<label class="title">VARIANTLAR</label>
+					<ul class="options">
+						<li class="option tool active" id="brush">
+							<img src="icons/brush.svg" alt="brush" />
+							<span>Brush</span>
+						</li>
+						<li class="option tool" id="eraser">
+							<img src="icons/eraser.svg" alt="eraser" />
+							<span>O'chirg'ich</span>
+						</li>
+						<li class="option">
+							<input type="range" id="size-slider" min="1" max="30" value="5" />
+						</li>
+					</ul>
+				</div>
+				<div class="row colors">
+					<label class="title">ranglar</label>
+					<ul class="options">
+						<li class="option"></li>
+						<li class="option selected"></li>
+						<li class="option"></li>
+						<li class="option"></li>
+						<li class="option">
+							<input type="color" id="color-picker" value="#4a98f7" />
+						</li>
+					</ul>
+				</div>
+				<div class="row buttons">
+					<button class="clear-canvas">O'chirish</button>
+					<button class="save-img">Saqlash</button>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
