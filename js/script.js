@@ -2,7 +2,9 @@ const canvas = document.querySelector('canvas'),
 toolBtns = document.querySelectorAll('.tool')
 fillColor = document.querySelector('#fill-color')
 sizeSlider = document.querySelector('#size-slider')
-colorBtns = document.querySelectorAll('.colors .option')
+colorBtns = document.querySelectorAll('.colors .option'),
+clearCanvsBtn = document.querySelector('.clear-canvas')
+saveCanvsBtn = document.querySelector('.save-img')
 
 let ctx = canvas.getContext('2d'),
 isDrawing = false,
@@ -13,9 +15,16 @@ prevMouseX,
 prevMouseY,
 snapshot
 
+const CanvasBg = () => {
+    ctx.fillStyle = '#fff'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = selectedColor
+}
+
 window.addEventListener('load', () => {
     canvas.width = canvas.offsetWidth
     canvas.height = canvas.offsetHeight
+    CanvasBg()
 })
 
 const startDraw = e => {
@@ -53,12 +62,12 @@ const drawCircle = e => {
 
 // tekis chiziq
 
-// const drawTriangle = e => {
-//     ctx.beginPath()
-//     ctx.moveTo(prevMouseX, prevMouseY)
-//     ctx.lineTo(e.offsetX, e.offsetY)
-//     ctx.stroke()
-// }
+const drawSlash = e => {
+    ctx.beginPath()
+    ctx.moveTo(prevMouseX, prevMouseY)
+    ctx.lineTo(e.offsetX, e.offsetY)
+    ctx.stroke()
+}
 
 const drawTriangle = e => {
     ctx.beginPath()
@@ -92,9 +101,17 @@ colorBtns.forEach(btn => {
 })
 
 
+
+
 const drawing = e => {
     if(!isDrawing) return
     ctx.putImageData(snapshot, 0, 0)
+
+    if(selectedTool == 'brush' || selectedTool == 'eraser') {
+        ctx.strokeStyle = selectedTool === 'eraser' ? '#fff' : selectedColor
+        ctx.lineTo(e.offsetX, e.offsetY)
+        ctx.stroke()
+    }
 
     switch (selectedTool) {
         case 'brush':
@@ -113,9 +130,14 @@ const drawing = e => {
         case 'triangle':
             drawTriangle(e)
             break;
+        case 'slash':
+            drawSlash(e)
+            break;
 
         case 'eraser':
-            
+            ctx.strokeStyle = '#fff'
+            ctx.lineTo(e.offsetX, e.offsetY)
+            cyx.stroke()
             break;
     
         default:
@@ -123,6 +145,18 @@ const drawing = e => {
     }
     
 }
+
+clearCanvsBtn.addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    CanvasBg()
+})
+
+saveCanvsBtn.addEventListener('click', () => {
+    const link = document.createElement('a')
+    link.download = `diyor-paint${Date.now()}.jpg`
+    link.href = canvas.toDataURL()
+    link.click()
+})
 
 canvas.addEventListener('mousemove', drawing)
 canvas.addEventListener('mousedown', startDraw)
