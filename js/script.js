@@ -3,6 +3,7 @@ toolBtns = document.querySelectorAll('.tool')
 fillColor = document.querySelector('#fill-color')
 sizeSlider = document.querySelector('#size-slider')
 colorBtns = document.querySelectorAll('.colors .option'),
+colorPicker = document.querySelector('#color-picker')
 clearCanvsBtn = document.querySelector('.clear-canvas')
 saveCanvsBtn = document.querySelector('.save-img')
 
@@ -100,6 +101,11 @@ colorBtns.forEach(btn => {
 	})
 })
 
+
+colorPicker.addEventListener('change', () => {
+    colorPicker.parentElement.style.background = colorPicker.value
+    colorPicker.parentElement.click()
+})
 
 
 
