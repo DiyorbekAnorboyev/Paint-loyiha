@@ -1,3 +1,3 @@
 # Paint-loyiha
 
-demo version: ##paint-dev.netlify.app
+demo version: *paint-dev.netlify.app*
