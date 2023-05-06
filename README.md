@@ -1,3 +1,3 @@
 # Paint-loyiha
 
-demo version: https://paint-dev.netlify.app
+Demo version: https://paint-dev.netlify.app
